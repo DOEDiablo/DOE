@@ -179,8 +179,8 @@ const priceText = `
 ---------------------------------------
 
 ▶레벨업
-1~70레벨+고행12 = 10,000원
-1~70레벨+100레벨 = 30,000원
+1-70레벨+고행12 = 10,000원
+1-70레벨+100레벨 = 30,000원
 
 ---------------------------------------
 `;
@@ -188,10 +188,10 @@ const priceText = `
 const container = document.getElementById("price-list");
 
 const sections = priceText
-  .split(/-+/)
+  .split(/\n\s*-{5,}\s*\n/)
   .map(section => section.trim())
   .filter(section => section.length > 0);
-
+   
 sections.forEach(section => {
   const lines = section
     .split("\n")
